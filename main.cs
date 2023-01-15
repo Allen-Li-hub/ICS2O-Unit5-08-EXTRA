@@ -1,7 +1,8 @@
 // Created by: Allen Li
-// Created on: Oct 2022
+// Created on: Dec 2022
 //
-// This program displays, "Multiplication Calculator"
+// This program displays, "Division Calculator"
+
 
 using System;
 class Program
@@ -9,31 +10,22 @@ class Program
     public static void Main(string[] args)
     {
         System.Random random = new System.Random();
-        double firstNumber;
+        // This function accepts user input
+        double diviser;
         double secondNumber;
-        Console.Write("Multiplication Calculator");
+        Console.Write("Enter two numbers to find the diviser!");
         Console.WriteLine("");
-        Console.Write("Input two number to find out the product");
-        Console.WriteLine("");
-        Console.Write("Input the first number:");
-        firstNumber = Convert.ToDouble(Console.ReadLine());
-        Console.Write("Input the second number: ");
+        Console.Write("Enter the first number: ");
+        diviser = Convert.ToDouble(Console.ReadLine());
+        Console.Write("Enter the second number: ");
         secondNumber = Convert.ToDouble(Console.ReadLine());
-        double product = 0;
         double counter = 0;
-        while (counter < Math.Abs(secondNumber))
+        while (diviser >= Math.Abs(secondNumber))
         {
+            diviser = diviser - Math.Abs(secondNumber);
             counter++;
-            product = product + Math.Abs(firstNumber);
-        }
-        if ((firstNumber < 0 && secondNumber > 0) || (secondNumber < 0 && firstNumber > 0))
-        {
-            Console.WriteLine("-" + product);
-        }
-        else
-        {
-            Console.WriteLine(product);
-        }
+        };
+        Console.WriteLine("The answer is: " + counter + " R" + diviser + "!");
         Console.WriteLine("");
         Console.Write("/Done");
     }
